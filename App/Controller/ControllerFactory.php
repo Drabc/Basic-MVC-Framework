@@ -8,7 +8,7 @@ class ControllerFactory
 {
 	public function get($controller_name, ServiceFactory $service_factory)
 	{
-		$class_name = $controller_name . 'Controller';
+		$class_name = ucfirst(strtolower($controller_name)) . 'Controller';
 
 		//Class name with namespace
 		$full_class_name = __NAMESPACE__ . '\\' . $class_name;

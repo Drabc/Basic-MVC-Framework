@@ -13,7 +13,7 @@ class DomainObjectFactory
 
 	public function get($domain_object_name)
 	{
-		$class_name = $domain_object_name . 'DomainObject';
+		$class_name = ucfirst(strtolower($domain_object_name)) . 'DomainObject';
 
 		//Class name with namespace
 		$full_class_name = $this->domain_objects_namespace . $class_name;

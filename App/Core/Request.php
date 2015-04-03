@@ -12,8 +12,8 @@ class Request
 	{
 		$uri = explode('/', filter_var(trim($uri, '/'), FILTER_SANITIZE_URL));
 
-		$this->controller = ($c = array_shift($uri)) ? $c : 'index';
-		$this->method 	  = ($m = array_shift($uri)) ? $m : 'index';
+		$this->controller = ($c = array_shift($uri)) ? $c : 'Index';
+		$this->method 	  = ($m = array_shift($uri)) ? $m : 'Index';
 		$this->params  	  = count($uri) ? $uri : array();
 
 		$this->params     = array_merge($this->params, $_POST);

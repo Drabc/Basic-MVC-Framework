@@ -21,9 +21,9 @@ class LoginController extends BaseController
 
 		//If authenticated show page, else direct to login page
 		if ($auth->authenticate($params['username'], $params['password']))
-			echo 'You have been authenticated';
+			header('Location: /MVC/');
 		else
-			echo 'Sorry, wrong username or password';
+			header('Location: /MVC/login');
 	}
 
 	public function index($params)

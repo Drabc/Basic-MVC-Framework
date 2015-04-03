@@ -21,7 +21,7 @@ class ServiceFactory
 	public function get($service_name)
 	{
 		//normalize service name
-		$service_name = $service_name . 'Service';
+		$service_name = ucfirst(strtolower($service_name)) . 'Service';
 
 		//load the class
 		include($service_name . '.php');

@@ -13,7 +13,7 @@ class DataMapperFactory
 
 	public function get($data_mapper_name)
 	{
-		$class_name = $data_mapper_name . 'DataMapper';
+		$class_name = ucfirst(strtolower($data_mapper_name)) . 'DataMapper';
 
 		//Class name with namespace
 		$full_class_name = $this->data_mappers_namespace . $class_name;

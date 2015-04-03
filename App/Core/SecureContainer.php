@@ -19,6 +19,8 @@ class SecureContainer
 	{	
 		if(get_class($this->target) != 'App\\Controller\\LoginController' and !$this->auth->isAuthorized())
 			header('Location: /MVC/login/');
+		else if (get_class($this->target) == 'App\\Controller\\LoginController' and $this->auth->isAuthorized())
+			header('Location: /MVC/');
 	 	else {
 
 	 	 	if (method_exists($this->target, $method)) {
